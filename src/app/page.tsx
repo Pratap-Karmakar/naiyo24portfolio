@@ -3,6 +3,7 @@ import { BackgroundLinesDemo } from "@/components/BackgroundLinesDemo";
 import Footer from "@/components/Footer";
 import { GetInTouch } from "@/components/GetInTouch";
 import HeroSection from "@/components/HeroSection";
+import Kk from "@/components/Kk";
 import TeamData from "@/components/TeamData";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -19,6 +20,7 @@ export default function Home() {
       <TeamData/>
       <WhyChooseUs/>
       <GetInTouch/>
+      <Kk/>
       <Footer/>
     </main>
   );
