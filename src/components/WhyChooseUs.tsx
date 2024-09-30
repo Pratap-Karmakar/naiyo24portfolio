@@ -30,9 +30,12 @@ const WhyChooseUs: React.FC = () => {
   const isInView = useInView(ref, { once: false }); // Trigger the animation when in view
 
   return (
-    <div className="h-full py-16 text-white lg:py-36 flex items-center md:px-20 px-4" ref={ref}>
+    <div 
+      className="min-h-screen h-full py-16 text-white lg:py-36 flex items-center justify-center md:px-20 px-4"
+      ref={ref}
+    >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-x-8 items-center">
+        <div className="flex flex-col xl:flex-row gap-x-8 items-center justify-center">
           
           {/* Text Section */}
           <div className="flex text-center xl:w-[30vw] flex-col lg:text-left mb-12">

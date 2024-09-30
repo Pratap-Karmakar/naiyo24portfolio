@@ -9,35 +9,32 @@ import { motion } from "framer-motion";
 
 function HeroSection() {
   return (
-    <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
-      <Spotlight
-        className="-top-40 -left-10 md:-left-32 md:-top-24 h-screen"
-        fill="white"
-      />
+    <div className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden mx-auto">
+      <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-24 h-screen" fill="white" />
       <Spotlight className="top-10 left-full h-[80vh] w-[50vw]" fill="purple" />
       <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
 
-      <div className="flex justify-center relative my-20 z-10 mt-36">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+      <div className="flex justify-center relative my-10 z-10">
+        <div className="max-w-[90vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ ease: "linear", duration: 2, x: { duration: 1 } }}
-            className="uppercase tracking-widest text-xs text-center text-blue-100  max-w-80"
+            transition={{ ease: "linear", duration: 2 }}
+            className="uppercase tracking-widest text-xs text-center text-blue-100"
           >
             <span className="font-bold text-purple-400">Naiyo24</span>,
             Innovating Tomorrow, Today.
           </motion.div>
 
           <TextGenerateEffect
-            className="text-center text-[40px] md:text-4xl lg:text-5xl"
+            className="text-center text-[32px] md:text-4xl lg:text-5xl"
             words="Transforming Concepts into Seamless User Experiences"
           />
 
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ ease: "linear", duration: 2, x: { duration: 1 } }}
+            transition={{ ease: "linear", duration: 2 }}
             className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl text-neutral-200"
           >
             Building the Future, One Line of Code at a Time.

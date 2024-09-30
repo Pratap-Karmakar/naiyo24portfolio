@@ -114,10 +114,10 @@ const TeamDataSlider: React.FC = () => {
               </div>
             </div>
             {/* Quote & Message */}
-            <div className='flex flex-1 flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
+            <div className='flex flex-1 flex-col justify-center before:w-[1px] xl:before:bg-[#640D5F] xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
               {/* Quote Icon */}
               <div className='mb-4'>
-                <FaQuoteLeft className='text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0' />
+                <FaQuoteLeft className='text-4xl xl:text-6xl text-[#640D5F] mx-auto md:mx-0' />
               </div>
               {/* Message */}
               <div className='xl:text-2xl tracking-widest text-center md:text-left'>
