@@ -3,37 +3,37 @@ import Link from "next/link"
 
 function Footer() {
     return (
-      <footer className=" text-gray-400 py-12">
+      <footer className=" text-gray-400 pb-12 pt-72">
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8">
           <div>
             <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
             <p className="mb-4">
-            NAIYO24 PRIVATE LIMITED specializes in crafting innovative web and mobile solutions tailored to your business. We’re committed to turning your digital ideas into reality with cutting-edge technology and expert services.
+            NAIYO24 PRIVATE LIMITED specializes in crafting innovative web and mobile solutions tailored to your business. We&apos;re committed to turning your digital ideas into reality with cutting-edge technology and expert services.
             </p>
           </div>
           <div>
             <h2 className="text-white text-lg font-semibold mb-4">Quick Links</h2>
             <ul>
-              <li>
+              <li className="py-2">
                 <Link
                   href="#"
-                  className="hover:text-white transition-colors duration-300"
+                  className="hover:text-white transition-colors bg-purple-400  py-[2px] text-black font-extrabold duration-300 pr-40 pl-2"
                 >
                   Home
                 </Link>
               </li>
-              <li>
+              <li className="py-2">
                 <Link
                   href="#"
-                  className="hover:text-white transition-colors duration-300"
+                  className="hover:text-white transition-colors bg-purple-400 pr-40 pl-2 py-[2px] text-black font-extrabold duration-300"
                 >
                   About
                 </Link>
               </li>
-              <li>
+              <li className="py-2">
                 <Link
                   href="/contact"
-                  className="hover:text-white transition-colors duration-300"
+                  className="hover:text-white transition-colors bg-purple-400 pr-[147px] pl-2 py-[2px] text-black font-extrabold duration-300"
                 >
                   Contact
                 </Link>

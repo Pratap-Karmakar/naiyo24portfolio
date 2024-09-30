@@ -1,69 +1,75 @@
 'use client'
 
-import React from "react";
-import { HoverEffect } from "./ui/card-hover-effect";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import WhyChooseUsSlider from '../components/WhyChooseUsSlider';
 
-const WhyChooseUs = () => {
+// Fade-in animation function with reverse logic
+const fadeIn = (direction: "up" | "down" | "left" | "right" = "up", delay: number = 0.3) => {
+  return {
+    hidden: {
+      opacity: 0,
+      x: direction === "left" ? -30 : direction === "right" ? 30 : 0, // Horizontal movement
+      y: direction === "up" ? 30 : direction === "down" ? -30 : 0, // Vertical movement
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.7, // Adjust the duration for smoothness
+        delay: delay,
+      },
+    },
+  };
+};
 
-  const data = [
-    {
-      title : 'Expert Team',
-      description : 'Our skilled professionals bring years of experience in web and app development, ensuring top-notch solutions tailored to your needs.',
-      slig : 'Expert-Team',
-      isFeaturted : true,
-    },
-    {
-      title : 'Innovative Solutions',
-      description : 'We leverage the latest technologies and industry best practices to deliver innovative, efficient, and effective digital solutions.',
-      slig : 'Innovative-Solutions',
-      isFeaturted : true,
-    },
-    {
-      title : 'Client-Centric Approach',
-      description : 'Your satisfaction is our priority. We work closely with you throughout the development process to ensure your vision is realized.',
-      slig : 'Client-Centric-Approach',
-      isFeaturted : true,
-    },
-    {
-      title : 'Quality Assurance',
-      description : 'We adhere to rigorous quality standards to provide you with reliable, high-performance applications and websites.',
-      slig : 'Quality-Assurance',
-      isFeaturted : true,
-    },
-    {
-      title: 'Scalable Architecture',
-      description: 'We design and build scalable systems that grow with your business, ensuring your digital solutions can handle increasing demands and user loads.',
-      slug: 'Scalable-Architecture',
-      isFeaturted: true,
-    },
-    {
-      title: 'Ongoing Support',
-      description: 'Our commitment does not end at launch. We provide continuous support and maintenance to keep your digital products running smoothly and up-to-date.',
-      slug: 'Ongoing-Support',
-      isFeaturted: true,
-    }
-  ]
+// Main Index component
+const WhyChooseUs: React.FC = () => {
+  const ref = useRef(null); // Reference for in-view tracking
+  const isInView = useInView(ref, { once: false }); // Trigger the animation when in view
 
   return (
-    <div className="py-12 mt-20">
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center">
-        <p className="bg-clip-text bg-black text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans md:py-10 relative z-20 font-bold tracking-tight ">
-        Why Choose Us
-      </p>
-          <div className="mt-10">
-          <HoverEffect
-          items={data.map(something => (
-            {
-              title: something.title,
-              description: something.description,
-              link: '/'
-            }
-          ))}
-          />
-            {/* <div className="mt-10 text-center">3</div> */}
+    <div className="h-full py-16 text-white lg:py-36 flex items-center md:px-20 px-4" ref={ref}>
+      <div className="container mx-auto">
+        <div className="flex flex-col xl:flex-row gap-x-8 items-center">
+          
+          {/* Text Section */}
+          <div className="flex text-center xl:w-[30vw] flex-col lg:text-left mb-12">
+            <motion.h2
+              variants={fadeIn("left", 0.3)} // Animate heading from the left
+              initial="hidden"
+              animate={isInView ? 'show' : 'hidden'} // Animate on scroll
+              exit="hidden"
+              className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"
+            >
+              Why Choose <span className="text-purple-500">Us</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeIn("down", 0.5)} // Animate paragraph from the bottom
+              initial="hidden"
+              animate={isInView ? 'show' : 'hidden'} // Animate on scroll
+              exit="hidden"
+              className="text-sm md:text-base mb-4 max-w-[400px] mx-auto mt-10 lg:mx-0"
+            >
+              NAIYO24 PRIVATE LIMITED specializes in crafting innovative web and
+              mobile solutions tailored to your business. We&apos;re committed to
+              turning your digital ideas into reality with cutting-edge
+              technology and expert services.
+            </motion.p>
           </div>
+
+          {/* Service Slider Section */}
+          <motion.div
+            variants={fadeIn("down", 0.7)} // Animate slider from the top
+            initial="hidden"
+            animate={isInView ? 'show' : 'hidden'} // Animate on scroll
+            exit="hidden"
+            className="w-full xl:max-w-[65%]"
+          >
+            <WhyChooseUsSlider/>
+          </motion.div>
         </div>
       </div>
     </div>
@@ -71,4 +77,3 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
-  

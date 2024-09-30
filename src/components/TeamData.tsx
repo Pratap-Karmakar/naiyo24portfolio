@@ -1,81 +1,51 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { fadeIn } from './variants'; // Ensure correct path
+import TeamDataSlider from './TeamDataSlider';
 
-const data = [
-  {
-    quote: "Ongoing Projects - Naiyo24, Luriana, Nariii",
-    name: "Srijani Ghosh",
-    title: "BDM SEO and Marketing",
-  },
-  {
-    quote: "Ongoing Projects - Niayo24, Nariii",
-    name: "Sambik Karmakar",
-    title: "IT Full Stack Graphic Desing",
-  },
-  {
-    quote: "Ongoing Projects - Nariii",
-    name: "Aaryan Sinha Roy",
-    title: "API,Server-side programming and App Deployment",
-  },
-  {
-    quote: "Ongoing Projects - Naiyo24, Nariii",
-    name: "Rohit Ghosh",
-    title: "Full Stack, Bakend Professional",
-  },
-  {
-    quote: "Ongoing Projects - Luriana",
-    name: "Pratap Karmakar",
-    title: "Full Stack Website Developer Professional",
-  },
-  {
-    quote: "Ongoing Projects - Nariii",
-    name: "Rana Kobiraj",
-    title: "Bakend Developer",
-  },
-  {
-    quote: "Ongoing Projects - Naiyo24, Nariii",
-    name: "Subhankar Das",
-    title: "Frontend Developer",
-  },
-  {
-    quote: "Ongoing Projects - Naiyo24",
-    name: "Kaustubh Upadhyay",
-    title: "IT Bakend Developer",
-  },
-  {
-    quote: "Intern",
-    name: "Samadrita Banarjee",
-    title: "IT Frontend Developer",
-  },
-  {
-    quote: "Ongoing Projects - Naiyo24, Luriana, Nariii",
-    name: "Tamashree Halder",
-    title: "BDM, SEO And Markening",
-  },
-  {
-    quote: "Ongoing Projects - Naiyo24",
-    name: "Souvik Nandy",
-    title: "Full stack Developer",
-  },
-];
+const TeamData: React.FC = () => {
+    const ref = useRef(null); // Create ref to monitor when the component is in view
+    const isInView = useInView(ref, { once: false }); // Tracks visibility
 
-const TeamData = () => {
-  return (
-    <div className="text-neutral-300 h-[20rem] w-full md:mt-48">
-      <h2 className="bg-clip-text bg-black text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans  relative z-20 font-bold tracking-tight mb-14 mt-20">Meet Our Team</h2>
-      <div className="flex justify-center w-full overflow-hidden px-4 md::px-6 lg:px-8">
-        <div className="w-full max-w-6xl">
-          <InfiniteMovingCards
-            items={data}
-            direction="right"
-            speed="slow"
-          />
+    return (
+        <div className='h-full text-white py-32 text-center' ref={ref}>
+            <div className='container mx-auto h-full flex flex-col justify-center'>
+                {/* Text */}
+                <motion.h2
+                    variants={fadeIn({ direction: 'right', delay: 0.2 })} // "Meet Our" from the right
+                    initial="hidden"
+                    animate={isInView ? 'show' : 'hidden'} // Toggle animation on scroll
+                    exit="hidden"
+                    className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center pb-10"
+                >
+                    <span>Meet Our </span>
+
+                    {/* "Team" comes from the left */}
+                    <motion.span
+                        variants={fadeIn({ direction: 'left', delay: 0.3 })} // "Team" from the left
+                        initial="hidden"
+                        animate={isInView ? 'show' : 'hidden'} // Toggle animation on scroll
+                        exit="hidden"
+                        className="text-purple-400"
+                    >
+                        Team
+                    </motion.span>
+                </motion.h2>
+
+                {/* Slider */}
+                <motion.div
+                    variants={fadeIn({ direction: 'up', delay: 0.4 })} // Slider comes from the top
+                    initial="hidden"
+                    animate={isInView ? 'show' : 'hidden'} // Toggle animation on scroll
+                    exit="hidden"
+                >
+                    <TeamDataSlider />
+                </motion.div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default TeamData;
