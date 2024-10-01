@@ -20,7 +20,7 @@ export function BackgroundLinesDemo() {
   };
 
   return (
-    <BackgroundLines className="flex items-center justify-center w-full h-screen flex-col md:flex-row px-6 md:px-14 bg-emerald-50">
+    <BackgroundLines className="flex items-center justify-center w-full h-screen flex-col md:flex-row px-6 md:px-14] bg-gradient-to-r from-[#664343] via-[#B17457] to-[#B17457] ">
       {/* Text coming from top */}
       <motion.div
         ref={ref}
@@ -29,9 +29,9 @@ export function BackgroundLinesDemo() {
         variants={fadeIn({ direction: "up" })} // Enhanced fadeIn with 'up' direction
         className="w-full md:w-1/2 flex flex-col items-start text-left p-6 md:p-8"
       >
-        <h2 className="bg-clip-text text-black text-2xl md:text-4xl lg:text-6xl font-sans py-4 md:py-8 relative z-20 font-bold tracking-tight">
+        <h2 className="bg-clip-text text-emerald-50 text-2xl md:text-4xl lg:text-6xl font-sans py-4 md:py-8 relative z-20 font-bold tracking-tight">
           Welcome to <br />
-          <span className="text-purple-600">NAIYO24 PRIVATE LIMITED</span>
+          <span className="text-[#FFF0D1]">NAIYO24 PRIVATE LIMITED</span>
         </h2>
       </motion.div>
 
@@ -52,7 +52,7 @@ export function BackgroundLinesDemo() {
             animate={inView ? "visible" : "hidden"}
             variants={lineVariants}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="h-1 bg-purple-600 mt-2"
+            className="h-1 bg-[#FFF0D1] mt-2"
           />
         </motion.div>
 
