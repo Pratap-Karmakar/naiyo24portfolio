@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { RxCrop, RxPencil2, RxDesktop, RxReader, RxRocket, RxArrowTopRight } from "react-icons/rx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
@@ -23,8 +26,16 @@ export const serviceData: ServiceItem[] = [
 ];
 
 const ServiceSlider: React.FC = () => {
+  const router = useRouter();
+
+  const handleCardClick = (title: string) => {
+    if (title.toLowerCase() === 'mobile app development') {
+      router.push('/pricing');
+    }
+  };
+
   return (
-    <div className="w-full h-screen flex items-center justify-center"> {/* Full screen wrapper */}
+    <div className="w-full h-screen flex items-center justify-center">
       <Swiper
         breakpoints={{
           340: {
@@ -45,11 +56,14 @@ const ServiceSlider: React.FC = () => {
           clickable: true,
         }}
         modules={[FreeMode, Pagination]}
-        className="w-full h-auto" // Ensure Swiper uses full width but only takes necessary height
+        className="w-full h-auto"
       >
         {serviceData.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#313131] h-max text-[#FFF0D1] rounded-lg px-6 py-8 flex flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[#212121] transition-all duration-300">
+            <div 
+              className="bg-[#313131] h-max text-[#FFF0D1] rounded-lg px-6 py-8 flex flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[#212121] transition-all duration-300"
+              onClick={() => handleCardClick(item.title)}
+            >
               {/* Purple line */}
               <div className="h-1 w-full bg-[#FFF0D1] mb-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
 
