@@ -29,7 +29,7 @@ export function GetInTouch() {
   return (
     <div
       ref={ref}
-      className="h-screen bg-emerald-50 pt-48 pb-10 px-4 relative overflow-hidden flex items-center justify-center" // Set to full screen height
+      className="h-screen pt-48 pb-10 px-4 relative overflow-hidden flex items-center justify-center" // Set to full screen height
     >
       <WavyBackground className="max-w-4xl mx-auto pb-40">
         {/* Animated heading */}
@@ -37,7 +37,7 @@ export function GetInTouch() {
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           animate={inView ? "show" : "hidden"} // Control animation based on visibility
-          className="text-2xl md:text-4xl lg:text-7xl text-black font-bold inter-var text-center"
+          className="text-2xl md:text-4xl lg:text-7xl text-[#FFF0D1] font-bold inter-var text-center"
         >
           Get In <span className="text-purple-600">Touch</span>
         </motion.p>
@@ -47,7 +47,7 @@ export function GetInTouch() {
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           animate={inView ? "show" : "hidden"} // Control animation based on visibility
-          className="text-base md:text-lg mt-4 text-black font-bold inter-var text-center"
+          className="text-base md:text-lg mt-4 text-white font-bold inter-var text-center"
         >
           Ready to take your digital presence to the next level? Contact us today to discuss your project and discover how NAIYO24 PRIVATE LIMITED can help you achieve your digital goals.
         </motion.p>
@@ -63,7 +63,7 @@ export function GetInTouch() {
             <motion.input
               type="text"
               placeholder="Name"
-              className="input w-full md:w-1/2 p-4 border border-purple-400 bg-[#FFEB55] rounded-md focus:ring-2 focus:ring-purple-400"
+              className="input w-full md:w-1/2 p-4 border border-purple-400 bg-[#FFF0D1] text-black rounded-md focus:ring-2 focus:ring-purple-400"
               variants={fadeIn("up", 0.6)} // Shuffle effect
               initial="hidden"
               animate={inView ? "show" : "hidden"}
@@ -71,7 +71,7 @@ export function GetInTouch() {
             <motion.input
               type="email"
               placeholder="Email"
-              className="input w-full md:w-1/2 p-4 border border-purple-400 bg-[#FFEB55] rounded-md focus:ring-2 focus:ring-purple-400"
+              className="input w-full md:w-1/2 p-4 border border-purple-400 bg-[#FFF0D1] text-black rounded-md focus:ring-2 focus:ring-purple-400"
               variants={fadeIn("up", 0.6)} // Shuffle effect
               initial="hidden"
               animate={inView ? "show" : "hidden"}
@@ -81,7 +81,7 @@ export function GetInTouch() {
           <motion.input
             type="text"
             placeholder="Subject"
-            className="input w-full p-4 border bg-[#FFEB55] border-purple-400 rounded-md focus:ring-2 focus:ring-purple-400"
+            className="input w-full p-4 border bg-[#FFF0D1] text-black border-purple-400 rounded-md focus:ring-2 focus:ring-purple-400"
             variants={fadeIn("up", 0.6)} // Shuffle effect
             initial="hidden"
             animate={inView ? "show" : "hidden"}
@@ -89,7 +89,7 @@ export function GetInTouch() {
 
           <motion.textarea
             placeholder="Message"
-            className="textarea w-full p-4 border bg-[#FFEB55] border-purple-400 rounded-md h-32 resize-none focus:ring-2 focus:ring-purple-400"
+            className="textarea w-full p-4 border bg-[#FFF0D1] text-black border-purple-400 rounded-md h-32 resize-none focus:ring-2 focus:ring-purple-400"
             variants={fadeIn("up", 0.6)} // Shuffle effect
             initial="hidden"
             animate={inView ? "show" : "hidden"}

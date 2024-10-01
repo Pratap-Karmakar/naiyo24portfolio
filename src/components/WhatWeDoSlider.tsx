@@ -49,16 +49,16 @@ const ServiceSlider: React.FC = () => {
       >
         {serviceData.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#B17457] h-max text-black rounded-lg px-6 py-8 flex flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[#956149] transition-all duration-300">
+            <div className="bg-[#FFF0D1] h-max text-black rounded-lg px-6 py-8 flex flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[#e2d5ba] transition-all duration-300">
               {/* Purple line */}
               <div className="h-1 w-full bg-[#4A4947] mb-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
 
               {/* Icon */}
-              <div className="text-[#FAF7F0] mb-4">{item.icon}</div>
+              <div className="text-black mb-4">{item.icon}</div>
 
               {/* Title & Description */}
               <div className="mb-8">
-                <div className="mb-2 text-lg text-[#FAF7F0] font-bold">{item.title}</div>
+                <div className="mb-2 text-lg text-black font-bold">{item.title}</div>
                 <p className="max-w-[350px] text-[10px] leading-normal text-[#956149] hover:text-black transition-all duration-300">
                   {item.description}
                 </p>
@@ -66,7 +66,7 @@ const ServiceSlider: React.FC = () => {
 
               {/* Arrow */}
               <div className="text-3xl">
-                <RxArrowTopRight className="text-[#FAF7F0] hover:text-[#4A4947] group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
+                <RxArrowTopRight className="text-black hover:text-[#4A4947] group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
               </div>
             </div>
           </SwiperSlide>

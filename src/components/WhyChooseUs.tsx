@@ -44,7 +44,7 @@ const WhyChooseUs: React.FC = () => {
               initial="hidden"
               animate={isInView ? 'show' : 'hidden'} // Animate on scroll
               exit="hidden"
-              className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"
+              className="text-2xl md:text-4xl lg:text-7xl text-[#FFF0D1] font-bold inter-var text-center"
             >
               Why Choose <span className="text-purple-500">Us</span>
             </motion.h2>

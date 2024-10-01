@@ -71,7 +71,7 @@ const WhatWeDo: React.FC = () => {
               whileInView="show" // Trigger animation when in view
               viewport={{ once: false }} // Repeat animation on scroll
               exit="exit" // Exit triggers the reverse animation
-              className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"
+              className="text-2xl md:text-4xl lg:text-7xl text-[#FFF0D1] font-bold inter-var text-center"
             >
               What <span className="text-purple-500">We Do</span>
             </motion.h2>
@@ -83,7 +83,7 @@ const WhatWeDo: React.FC = () => {
               whileInView="show" // Trigger animation when in view
               viewport={{ once: false }} // Repeat animation on scroll
               exit="exit" // Exit triggers the reverse animation
-              className="text-sm md:text-base mb-4 max-w-[400px] mx-auto mt-6 lg:mt-10 lg:mx-0"
+              className="text-sm text-[#FFF0D1] md:text-base mb-4 max-w-[400px] mx-auto mt-6 lg:mt-10 lg:mx-0"
             >
               NAIYO24 PRIVATE LIMITED specializes in crafting innovative web and mobile solutions tailored to your business. We&apos;re committed to turning your digital ideas into reality with cutting-edge technology and expert services.
             </motion.p>

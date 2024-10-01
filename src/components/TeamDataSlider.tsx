@@ -96,7 +96,7 @@ const TeamDataSlider: React.FC = () => {
     >
       {teamData.map((person, index) => (
         <SwiperSlide key={index}>
-          <div className='flex flex-col items-center md:flex-row gap-x-8 h-full px-16'>
+          <div className='flex bg-[#212121] rounded-xl flex-col items-center md:flex-row gap-x-8 h-full px-16'>
             {/* Avatar, Name, Position */}
             <div className='w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0'>
               <div className='flex flex-col justify-center text-center'>
@@ -114,10 +114,10 @@ const TeamDataSlider: React.FC = () => {
               </div>
             </div>
             {/* Quote & Message */}
-            <div className='flex flex-1 flex-col justify-center before:w-[1px] xl:before:bg-[#640D5F] xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
+            <div className='flex flex-1 flex-col justify-center before:w-[1px] xl:before:bg-[#B7E0FF] xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
               {/* Quote Icon */}
               <div className='mb-4'>
-                <FaQuoteLeft className='text-4xl xl:text-6xl text-[#640D5F] mx-auto md:mx-0' />
+                <FaQuoteLeft className='text-4xl xl:text-6xl text-[#B7E0FF] mx-auto md:mx-0' />
               </div>
               {/* Message */}
               <div className='xl:text-2xl tracking-widest text-center md:text-left'>

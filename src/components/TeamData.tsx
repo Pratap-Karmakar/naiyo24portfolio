@@ -10,7 +10,7 @@ const TeamData: React.FC = () => {
     const isInView = useInView(ref, { once: false }); // Tracks visibility
 
     return (
-        <div className='h-screen text-black bg-emerald-50 flex items-center justify-center' ref={ref}> {/* Fullscreen container */}
+        <div className='h-screen text-[#FFF0D1] flex items-center justify-center' ref={ref}> {/* Fullscreen container */}
             <div className='container mx-auto h-full flex flex-col justify-center'>
                 {/* Text */}
                 <motion.h2
@@ -18,7 +18,7 @@ const TeamData: React.FC = () => {
                     initial="hidden"
                     animate={isInView ? 'show' : 'hidden'} // Toggle animation on scroll
                     exit="hidden"
-                    className="text-2xl md:text-4xl lg:text-7xl text-black font-bold inter-var text-center pb-10"
+                    className="text-2xl md:text-4xl lg:text-7xl text-[#FFF0D1] font-bold inter-var text-center pb-10"
                 >
                     <span>Meet Our </span>
 
